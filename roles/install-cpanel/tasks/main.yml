@@ -31,6 +31,10 @@
   include: files.yml
   when: cpanel_installed is not defined
 
+- name: Disable SELinux
+  include: selinux.yml
+  when: cpanel_installed is not defined
+  
 - name: cPanel Installer Task
   include: install.yml
   when: cpanel_installed is not defined
